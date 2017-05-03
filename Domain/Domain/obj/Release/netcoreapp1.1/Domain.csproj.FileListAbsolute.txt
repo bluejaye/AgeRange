@@ -1,0 +1,6 @@
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Domain\Domain\bin\Release\netcoreapp1.1\Domain.deps.json
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Domain\Domain\bin\Release\netcoreapp1.1\Domain.dll
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Domain\Domain\bin\Release\netcoreapp1.1\Domain.pdb
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Domain\Domain\obj\Release\netcoreapp1.1\Domain.AssemblyInfo.cs
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Domain\Domain\obj\Release\netcoreapp1.1\Domain.dll
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Domain\Domain\obj\Release\netcoreapp1.1\Domain.pdb

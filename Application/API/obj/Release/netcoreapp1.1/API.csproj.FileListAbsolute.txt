@@ -1,0 +1,15 @@
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\API.deps.json
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\API.runtimeconfig.json
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\API.runtimeconfig.dev.json
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\API.dll
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\API.pdb
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\Data.dll
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\Domain.dll
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\Dto.dll
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\Domain.pdb
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\Data.pdb
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\bin\Release\netcoreapp1.1\Dto.pdb
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\obj\Release\netcoreapp1.1\API.csprojResolveAssemblyReference.cache
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\obj\Release\netcoreapp1.1\API.AssemblyInfo.cs
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\obj\Release\netcoreapp1.1\API.dll
+C:\Users\Jay.Zhang\Desktop\AgeRanger\Application\API\obj\Release\netcoreapp1.1\API.pdb

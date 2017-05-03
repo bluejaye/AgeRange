@@ -1,0 +1,95 @@
+<h1>
+  {{title}}
+  <small> 
+    Jay(zjaybbs@gmail.com)
+  </small>
+</h1>
+<br>
+
+<!--search List-->
+<div>
+  <form role="form" #currentForm="ngForm" (keydown)="autoSearch($event)">
+    <input name="search" [(ngModel)]="searchString" type="text" placeholder="type with enter to search">
+    <button class="btn" (click)="searchList()">Search</button>
+  </form>
+</div>
+<br>
+
+<!--Person List-->
+<table class="table" *ngIf="!isLoading">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Age Group</th>
+    <th>Action</th>
+  </tr>
+  <template ngFor let-person [ngForOf]="personList">
+    <tr>
+      <td>{{person.firstName}}</td>
+      <td>{{person.lastName}}</td>
+      <td>{{person.age}}</td>
+      <td>{{person.ageGroup}}</td>
+      <td><button class="btn" (click)="displayEdit(person)">Edit</button></td>
+    </tr>
+    <tr *ngIf="person.Display">
+      <td colspan="5">
+        <h4>Edit Person</h4>
+        <form role="form" (ngSubmit)="edit(person)" #currentForm="ngForm" (change)="onChanges($event)" (keydown)="onChanges($event)">
+          <div class="input-group">
+            <label class="input-group-addon">First Name: </label>
+            <input class="form-control" [(ngModel)]="editModel.firstName" name="First" type="text">
+          </div>
+          <div class="input-group">
+            <label class="input-group-addon">Last Name: </label>
+            <input class="form-control" class="form-control" [(ngModel)]="editModel.lastName" name="Last" type="text">
+          </div>
+          <div class="input-group">
+            <label class="input-group-addon">Age: </label>
+            <input class="form-control" [(ngModel)]="editModel.age" name="Age" type="number" min="1" max="99999999">
+          </div>
+
+          <div class="btn-group">
+            <button class="btn " type="submit">Edit</button>
+            <button class="btn" type="reset" (click)="person.Display=false">Close</button>
+          </div>
+        </form>
+      </td>
+    </tr>
+  </template>
+  <tr *ngIf="!personList || personList.length<1">
+    <td colspan="5">
+      <div class="alert alert-warning">No result...</div>
+    </td>
+  </tr>
+</table>
+
+
+<button class="btn" (click)="showCreate=!showCreate">Create Person ({{showCreate?"close":"open"}})</button>
+<!--Create Person-->
+<template [ngIf]="showCreate">
+  <h4>Create Person</h4>
+  <form role="form" (ngSubmit)="create(currentForm)" #currentForm="ngForm">
+    <div class="input-group">
+      <label class="input-group-addon">First Name: </label>
+      <input class="form-control" [(ngModel)]="createModel.FirstName" name="First" type="text">
+    </div>
+    <div class="input-group">
+      <label class="input-group-addon">Last Name: </label>
+      <input class="form-control" [(ngModel)]="createModel.LastName" name="Last" type="text">
+    </div>
+    <div class="input-group">
+      <label class="input-group-addon">Age: </label>
+      <input class="form-control" [(ngModel)]="createModel.Age" name="Age" type="number" min="1" max="99999999">
+    </div>
+
+    <div class="btn-group">
+      <button class="btn" type="submit">Add</button>
+      <button class="btn" type="reset">Cancel</button>
+    </div>
+  </form>
+</template>
+
+<template [ngIf]="isLoading">
+  <h3>loading....</h3>
+</template>
