@@ -1,5 +1,5 @@
 ## Age Range Demo
-###### By Jay (zjaybbs@Gmail.com)
+###### By Jay (zjaybbs@gmail.com)
 
 #### Project Structure
 The main architecture for the demo is created with simplified DDD, CQRS and Onion. The project is consisted of four parts: Domain (domain model, services with unit test and contracts), Infrastructure (Data Repository), Application (Web API and DTO) and Web (angular 2 application).
