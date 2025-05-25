@@ -10,10 +10,11 @@ namespace UnitTest
         private Domain.Contract.Service.IPerson _personService;
         Mock<Domain.Contract.Repository.IPerson> _personRepoMock = new Mock<Domain.Contract.Repository.IPerson>();
         Mock<Domain.Contract.Repository.IAgeGroup> _ageGroupRepoMock = new Mock<Domain.Contract.Repository.IAgeGroup>();
+        Mock<Domain.Contract.Events.IDomainEventDispatcher> _domainDispatcher = new Mock<Domain.Contract.Events.IDomainEventDispatcher>();
 
         private Domain.Contract.Service.IPerson InitializeServiceInstance()
         {
-            return new Domain.Service.Person(_unitOfWorkMock, _personRepoMock.Object, _ageGroupRepoMock.Object);
+            return new Domain.Service.Person(_unitOfWorkMock, _personRepoMock.Object, _ageGroupRepoMock.Object, _domainDispatcher.Object);
         }
 
         protected override void PrepareMockBestCaseScenario()

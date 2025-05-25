@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Domain.Entity;
 using Domain.Contract;
+using Domain.Contract.Events;
+using System.Threading.Tasks;
 
 namespace Domain.Service
 {
@@ -12,13 +14,18 @@ namespace Domain.Service
         private Contract.Repository.IPerson _personRepository;
         private Contract.Repository.IAgeGroup _ageGroupRepository;
 
+        private readonly IDomainEventDispatcher _dispatcher;
+
+
         public Person(IUnitOfWork unitOfWork,
             Contract.Repository.IPerson personRepository,
-            Contract.Repository.IAgeGroup ageGroupRepository)
+            Contract.Repository.IAgeGroup ageGroupRepository,
+            IDomainEventDispatcher dispatcher)
         {
             _unitOfWork = unitOfWork;
             _personRepository = personRepository;
             _ageGroupRepository = ageGroupRepository;
+            _dispatcher = dispatcher;
         }
 
         public void Create(Entity.Person person)
@@ -59,5 +66,16 @@ namespace Domain.Service
                 }
             }
         }
+        public void UpdateAgeAsync(long personId, int newAge)
+        {
+            var person = _personRepository.Get(personId);
+            person.UpdateAge(newAge);
+
+            _personRepository.Edit(person);
+            _dispatcher.DispatchAsync(person.DomainEvents).Wait();
+            person.ClearDomainEvents();
+            _unitOfWork.Commit();
+        }
+
     }
 }
